@@ -6,6 +6,7 @@ new Swiper('.swiper-container', {
     loop: true,
     autoplay: true,
     grabCursor: true,
+    effect: 'flip',
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

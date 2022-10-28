@@ -83,13 +83,38 @@ body {
     padding-bottom: 60px;
 }
 
-.promo {
+.pizza {
     box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
     background: #fff1b8 url(../img/promo-image.png) no-repeat top -100px right -100px / 600px;
     border-radius: 10px;
     padding: 68px 70px;
     margin-bottom: 56px;
 }
+
+.kebab {
+    box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+    background: #87caf7 url(../img/kebab.png) no-repeat top -100px right -100px / 600px;
+    border-radius: 10px;
+    padding: 68px 70px;
+    margin-bottom: 56px;
+}
+
+.vegetables {
+    box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+    background: #e2ff78 url(../img/vegetables.png) no-repeat top 5px right -100px / 750px;
+    border-radius: 10px;
+    padding: 68px 70px;
+    margin-bottom: 56px;
+}
+
+.sushi {
+    box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+    background: #c4c1b6 url(../img/sushi.png) no-repeat top -100px right -100px / 600px;
+    border-radius: 10px;
+    padding: 68px 70px;
+    margin-bottom: 56px;
+}
+
 
 .proto-title {
     font-style: normal;
