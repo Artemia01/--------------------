@@ -26,7 +26,7 @@ const messageAuthError = document.querySelector('#auth-error')
 const cardsWrapper = document.querySelector('#cards')
 const promoSwiperContainer = document.querySelector('.promo-swiper-container')
 const restaurantsHeading = document.querySelector('.section-heading.restaurants')
-const inputSearch = document.querySelector('.input-search')
+
 
 const cart = localStorage.getItem(CART_TOKEN)
     ? {
@@ -213,30 +213,7 @@ const toggleModalCart = () => {
 }
 
 (() => {
-    inputSearch.addEventListener('keypress', (event) => {
-        if (event.charCode === 13) {
-            getData('./db/partners.json')
-                .then((data) => data.map((partner) => partner.products))
-                .then((links) => {
-                    promoSwiperContainer.classList.add('hide');
-                    cardsWrapper.innerHTML = ''
-                    goodsVisible = true
-
-                    setRestaurantHeading({ name: 'Результаты поиска', kitchen: 'Разная' })
-
-                    links.forEach((link) => {
-                        getData(`./db/${link}`).then((data) => {
-                            goodsVisible = !goodsVisible
-
-                            data
-                                .filter((prod) => prod.name.toLowerCase()
-                                    .includes(inputSearch.value.toLowerCase()))
-                                .forEach(createGood);
-                        })
-                    })
-                })
-        }
-    })
+    
 
     cartBtn.addEventListener('click', () => {
         cart.products.forEach(createCartItem)
