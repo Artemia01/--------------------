@@ -264,26 +264,7 @@ const toggleModalCart = () => {
             toggleModalCart()
 
             cartWrapper.innerHTML = ''
-        } else if (target.classList.contains('counter-button')) {
-            const { id } = target.closest('.food-row').dataset
-
-            cart.products = cart.products.map((product) => {
-                if (product.id === id) {
-                    if (target.innerHTML === '+') {
-                        return { ...product, amount: product.amount + 1 }
-                    } else {
-                        return product.amount - 1 > 0 ? { ...product, amount: product.amount - 1 } : null
-                    }
-                }
-
-                return product
-            })
-            cart.products = cart.products.filter((product) => product)
-            localStorage.setItem(CART_TOKEN, JSON.stringify(cart.products))
-
-            cartWrapper.innerHTML = ''
-            cart.products.forEach(createCartItem)
-            cartPrice.innerHTML = cart.products.reduce((total, { price, amount }) => total + price * amount, 0) + ' ₽'
+       //т
         }
     })
 
@@ -338,7 +319,7 @@ const toggleModalCart = () => {
         }
     })
 
-    cardsWrapper.addEventListener('click', (event) => {
+    cardsWrapper.addEventListener('click', (event) => { // переход по карточке
         const { target: { classList } } = event
 
         if (!classList.contains('cards')) {
@@ -346,24 +327,7 @@ const toggleModalCart = () => {
                 const { id, name, price } = event.target.closest('.card').dataset;
                 let exist = false
 
-                cart.products = cart.products.map((product) => {
-                    if (product.id === id) {
-                        exist = true
-
-                        return { ...product, amount: product.amount + 1 }
-                    }
-
-                    return product
-                })
-
-                if (!exist) {
-                    cart.products.push({ id, name, price, amount: 1 })
-                }
-
-                localStorage.setItem(CART_TOKEN, JSON.stringify(cart.products))
-
-                cart.totalPrice += parseInt(price)
-                cartPrice.innerHTML = cart.totalPrice + ' ₽'
+             //d
             } else {
                 openGoods(event)
             }
